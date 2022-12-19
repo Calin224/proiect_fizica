@@ -1,0 +1,45 @@
+{% extends 'main.html' %} {% block content %}
+
+<canvas id="canvas"></canvas>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const context = canvas.getContext("2d");
+
+  const width = canvas.width;
+  const height = canvas.height;
+
+  function generateWaveform(amplitude, frequency, phase, time) {
+    return amplitude * Math.sin(frequency * time + phase);
+  }
+
+  function updateWaveform(amplitude, frequency, phase, time) {
+    context.clearRect(0, 0, width, height);
+
+    context.beginPath();
+    context.moveTo(0, height / 2);
+
+    for (let x = 0; x < width; x++) {
+      const y =
+        generateWaveform(amplitude, frequency, phase, time + x / 50) +
+        height / 2;
+      context.lineTo(x, y);
+    }
+
+    context.stroke();
+
+    // Draw horizontal line
+    context.beginPath();
+    context.moveTo(0, height / 2);
+    context.lineTo(width, height / 2);
+    context.stroke();
+  }
+
+  let time = 0;
+  setInterval(() => {
+    updateWaveform(50, 1 * Math.PI, 0, time);
+    time += 0.1;
+  }, 100);
+</script>
+
+{% endblock %}

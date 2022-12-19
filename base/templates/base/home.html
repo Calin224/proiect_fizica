@@ -1,0 +1,56 @@
+{% extends 'main.html' %} {% block content %}
+
+<style>
+  .section-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 6;
+    text-align: center;
+    transform: translateY(-50%);
+  }
+
+  body {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #ececee;
+      background-color: #1f2029;
+      overflow: hidden;
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+      background-position: center;
+      background-repeat: repeat;
+      background-size: 4%;
+      height: 100vh;
+      width: 100%;
+    }
+
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 7vw;
+    line-height: 1;
+    color: #ffeba7;
+    text-align: center;
+    -webkit-text-stroke: 2px #ffeba7;
+    text-stroke: 2px #ffeba7;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .circuit-section {
+    height: 100vh;
+  }
+</style>
+
+<div class="section-center ">
+  <h1 class="">Fizica</h1>
+</div>
+
+{% endblock %}
